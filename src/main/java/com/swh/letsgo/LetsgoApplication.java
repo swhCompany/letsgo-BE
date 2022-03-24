@@ -9,5 +9,6 @@ public class LetsgoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LetsgoApplication.class, args);
 	}
+	// test용 주석
 
 }
