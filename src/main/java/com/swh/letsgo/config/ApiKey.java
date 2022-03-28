@@ -5,23 +5,20 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ApiKey {
-    @Value("${library-api-key}")
-    private String libraryApiKey;
+    @Value("${api-key}")
+    private String ApiKey;
 
-    @Value("${museum-api-key}")
-    private String museumApiKey;
-
-    public String getLibraryApiKey() {
-        return libraryApiKey;
+    public String getApiKey() {
+        return ApiKey;
     }
 
-    public String getMuseumApiKey() {
-        return museumApiKey;
+    public void setApiKey(String apiKey) {
+        ApiKey = apiKey;
     }
 
     @Override
     public String toString() {
-        return "ApiKey [libraryApiKey=" + libraryApiKey + ", museumApiKey=" + museumApiKey + "]";
+        return "ApiKey [ApiKey=" + ApiKey + "]";
     }
 
 }

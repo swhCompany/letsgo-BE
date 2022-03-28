@@ -21,13 +21,12 @@ public class OpenAPIController {
     public String callOpenAPI(@RequestBody OpenAPIDTO openAPIDTO) {
         String result;
         if(openAPIDTO.getType()==0){
-            System.out.println("controller check");
             result = openAPIService.callLibraryOpenAPI(openAPIDTO.getHeaderArea(), openAPIDTO.getHeaderRegion());
+        } else if (openAPIDTO.getType()==1) {
+            result = openAPIService.callVillageOpenAPI(openAPIDTO.getHeaderArea(), openAPIDTO.getHeaderRegion());
         } else {
-            System.out.println("controller check2");
-            result = openAPIService.callMuseumOpenAPI(openAPIDTO.getHeaderArea(), openAPIDTO.getHeaderRegion());
+            result = openAPIService.callForestOpenAPI(openAPIDTO.getHeaderArea(), openAPIDTO.getHeaderRegion());
         }
-        // String result = type.equals("0")?openAPIService.callLibraryOpenAPI(headerArea, headerRegion):openAPIService.callMuseumOpenAPI(headerArea, headerRegion);
         return result;
     }
 }
