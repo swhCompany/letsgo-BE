@@ -17,7 +17,8 @@ public class OpenAPIController {
     }
 
     @PostMapping
-    public void callOpenAPI(@RequestBody String headerArea, String headerRegion) {
-        openAPIService.callOpenAPI(headerArea, headerArea);
+    public String callOpenAPI(@RequestBody int type, String headerArea, String headerRegion) {
+        
+        return type==0?openAPIService.callLibraryOpenAPI(headerArea, headerArea):openAPIService.callMuseumOpenAPI(headerArea, headerRegion);
     }
 }
