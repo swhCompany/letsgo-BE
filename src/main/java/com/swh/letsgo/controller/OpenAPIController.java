@@ -25,7 +25,7 @@ public class OpenAPIController {
         } else if (openAPIDTO.getType()==1) {
             result = openAPIService.callVillageOpenAPI(openAPIDTO.getHeaderArea(), openAPIDTO.getHeaderRegion());
         } else {
-            result = openAPIService.callForestOpenAPI(openAPIDTO.getHeaderArea(), openAPIDTO.getHeaderRegion());
+            result = openAPIService.callForestOpenAPI(openAPIDTO.getHeaderArea());
         }
         return result;
     }
