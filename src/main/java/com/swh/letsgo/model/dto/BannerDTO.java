@@ -1,29 +1,34 @@
 package com.swh.letsgo.model.dto;
 
-import java.util.Date;
-
 import com.swh.letsgo.model.entity.Banner;
 
 public class BannerDTO {
-    private int id;
+    private Long id;
     private String placeName;
     private String placeAddr;
     private String placeTel;
-    private Date placeClosedate;
+    private String placeClosedate;
     private int count;
 
     public BannerDTO(Banner banner) {
         this.placeName = banner.getPlaceName();
         this.placeAddr = banner.getPlaceAddr();
         this.placeTel = banner.getPlaceTel();
-        this.placeClosedate = banner.getPlaceClosedate();
+        this.placeClosedate = banner.getPlaceClosedate().toString();
     }
 
-    public int getId() {
+    public BannerDTO(String placeName, String placeAddr, String placeTel, String placeClosedate) {
+        this.placeName = placeName;
+        this.placeAddr = placeAddr;
+        this.placeTel = placeTel;
+        this.placeClosedate = placeClosedate;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -51,11 +56,11 @@ public class BannerDTO {
         this.placeTel = placeTel;
     }
 
-    public Date getPlaceClosedate() {
+    public String getPlaceClosedate() {
         return placeClosedate;
     }
 
-    public void setPlaceClosedate(Date placeClosedate) {
+    public void setPlaceClosedate(String placeClosedate) {
         this.placeClosedate = placeClosedate;
     }
 

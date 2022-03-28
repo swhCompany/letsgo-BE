@@ -1,7 +1,5 @@
 package com.swh.letsgo.model.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,21 +13,21 @@ public class Banner {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String placeName;
     private String placeAddr;
     private String placeTel;
-    private Date placeClosedate;
+    private String placeClosedate;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     @ColumnDefault("0")
     private int count;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,11 +55,11 @@ public class Banner {
         this.placeTel = placeTel;
     }
 
-    public Date getPlaceClosedate() {
+    public String getPlaceClosedate() {
         return placeClosedate;
     }
 
-    public void setPlaceClosedate(Date placeClosedate) {
+    public void setPlaceClosedate(String placeClosedate) {
         this.placeClosedate = placeClosedate;
     }
 
@@ -71,6 +69,12 @@ public class Banner {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    @Override
+    public String toString() {
+        return "Banner [count=" + count + ", id=" + id + ", placeAddr=" + placeAddr + ", placeClosedate="
+                + placeClosedate + ", placeName=" + placeName + ", placeTel=" + placeTel + "]";
     }
 
     
