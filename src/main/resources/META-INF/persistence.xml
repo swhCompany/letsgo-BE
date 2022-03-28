@@ -30,7 +30,7 @@
             <!-- **(중요) 애플리케이션 실행 시 DB 테이블을 자동으로 생성할 것인지 ? -->
             <!-- create: 기존에 테이블이 존재하면 삭제(drop), 테이블 새로 생성, DROP + CREATE -->
             <!-- update: DB테이블과 Entity(객체)의 맵핑(Mapping) 정보를 비교, 변경된 사항만 수정, 반영 -->
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
 
         </properties>
     </persistence-unit>
