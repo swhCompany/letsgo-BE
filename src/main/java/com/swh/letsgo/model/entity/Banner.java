@@ -16,10 +16,10 @@ public class Banner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String place_name;
-    private String place_addr;
-    private String place_tel;
-    private Date place_closedate;
+    private String placeName;
+    private String placeAddr;
+    private String placeTel;
+    private Date placeClosedate;
 
     @Column(nullable = true)
     @ColumnDefault("0")
@@ -33,36 +33,36 @@ public class Banner {
         this.id = id;
     }
 
-    public String getPlace_name() {
-        return place_name;
+    public String getPlaceName() {
+        return placeName;
     }
 
-    public void setPlace_name(String place_name) {
-        this.place_name = place_name;
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
     }
 
-    public String getPlace_addr() {
-        return place_addr;
+    public String getPlaceAddr() {
+        return placeAddr;
     }
 
-    public void setPlace_addr(String place_addr) {
-        this.place_addr = place_addr;
+    public void setPlaceAddr(String placeAddr) {
+        this.placeAddr = placeAddr;
     }
 
-    public String getPlace_tel() {
-        return place_tel;
+    public String getPlaceTel() {
+        return placeTel;
     }
 
-    public void setPlace_tel(String place_tel) {
-        this.place_tel = place_tel;
+    public void setPlaceTel(String placeTel) {
+        this.placeTel = placeTel;
     }
 
-    public Date getPlace_closedate() {
-        return place_closedate;
+    public Date getPlaceClosedate() {
+        return placeClosedate;
     }
 
-    public void setPlace_closedate(Date place_closedate) {
-        this.place_closedate = place_closedate;
+    public void setPlaceClosedate(Date placeClosedate) {
+        this.placeClosedate = placeClosedate;
     }
 
     public int getCount() {
@@ -73,4 +73,5 @@ public class Banner {
         this.count = count;
     }
 
+    
 }
