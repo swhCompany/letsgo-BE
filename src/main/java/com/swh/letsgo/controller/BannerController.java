@@ -25,6 +25,4 @@ public class BannerController {
         BannerService.insertBanner(bannerDTO);
     }
 
-
-
 }
