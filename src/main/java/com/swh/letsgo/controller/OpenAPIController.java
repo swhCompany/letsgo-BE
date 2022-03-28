@@ -1,5 +1,6 @@
 package com.swh.letsgo.controller;
 
+import com.swh.letsgo.model.dto.OpenAPIDTO;
 import com.swh.letsgo.service.OpenAPIService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +18,16 @@ public class OpenAPIController {
     }
 
     @PostMapping
-    public String callOpenAPI(@RequestBody int type, String headerArea, String headerRegion) {
-        
-        return type==0?openAPIService.callLibraryOpenAPI(headerArea, headerArea):openAPIService.callMuseumOpenAPI(headerArea, headerRegion);
+    public String callOpenAPI(@RequestBody OpenAPIDTO openAPIDTO) {
+        String result;
+        if(openAPIDTO.getType()==0){
+            System.out.println("controller check");
+            result = openAPIService.callLibraryOpenAPI(openAPIDTO.getHeaderArea(), openAPIDTO.getHeaderRegion());
+        } else {
+            System.out.println("controller check2");
+            result = openAPIService.callMuseumOpenAPI(openAPIDTO.getHeaderArea(), openAPIDTO.getHeaderRegion());
+        }
+        // String result = type.equals("0")?openAPIService.callLibraryOpenAPI(headerArea, headerRegion):openAPIService.callMuseumOpenAPI(headerArea, headerRegion);
+        return result;
     }
 }

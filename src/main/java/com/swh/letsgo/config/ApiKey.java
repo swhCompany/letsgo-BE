@@ -19,4 +19,9 @@ public class ApiKey {
         return museumApiKey;
     }
 
+    @Override
+    public String toString() {
+        return "ApiKey [libraryApiKey=" + libraryApiKey + ", museumApiKey=" + museumApiKey + "]";
+    }
+
 }
