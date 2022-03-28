@@ -7,7 +7,7 @@ import com.swh.letsgo.model.entity.Banner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BannerRepository extends JpaRepository<Banner, Long> {
-    Banner findByPlaceAddress(String placeAddr);
+    Banner findByPlaceAddr(String placeAddr);
 
-    List<Banner> findByTop3ByOrderByCount();
+    List<Banner> findTop3ByOrderByCountDesc();
 }

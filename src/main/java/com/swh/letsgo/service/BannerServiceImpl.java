@@ -18,16 +18,19 @@ public class BannerServiceImpl implements BannerService {
     
     @Override
     public void insertBanner(BannerDTO bannerDTO) {
-        Banner banner = bannerRepository.findByPlaceAddress(bannerDTO.getPlaceAddr());
-            //DB 저장
+        Banner banner = bannerRepository.findByPlaceAddr(bannerDTO.getPlaceAddr());
+            //프론트에서 불러온 정보를 DB에 저장
             //만약 존재한다면 count++
             //존재하지 않으면 새로 추가
+
+
+
 
     }
 
     @Override
     public List<BannerDTO> findBanners() {
-        List<Banner> list = bannerRepository.findByTop3ByOrderByCount();
+        List<Banner> list = bannerRepository.findTop3ByOrderByCountDesc();
         
         // entity -> DTO로 반환
         List<BannerDTO> result = list.stream().map(r -> new BannerDTO(r)).collect(Collectors.toList());
