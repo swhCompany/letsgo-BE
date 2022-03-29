@@ -14,6 +14,7 @@ public class Banner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String placeName;
     private String placeAddr;
     private String placeTel;

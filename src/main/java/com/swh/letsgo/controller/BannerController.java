@@ -23,13 +23,11 @@ public class BannerController {
         this.bannerService = bannerService;
     }
 
-    // DB저장
     @PostMapping()
     public void insertBanner(@RequestBody BannerDTO bannerDTO) {
         bannerService.insertBanner(bannerDTO);
     }
 
-    // 장소 띄워주기
     @GetMapping()
     public List<BannerDTO> findBanners() {
         return bannerService.findBanners();
