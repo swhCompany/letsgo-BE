@@ -11,6 +11,7 @@
 	<groupId>com.swh</groupId>
 	<artifactId>letsgo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>letsgo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
