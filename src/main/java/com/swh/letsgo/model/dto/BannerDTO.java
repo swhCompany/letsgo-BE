@@ -1,62 +1,67 @@
 package com.swh.letsgo.model.dto;
 
-import java.util.Date;
-
 import com.swh.letsgo.model.entity.Banner;
 
 public class BannerDTO {
-    private int id;
-    private String place_name;
-    private String place_addr;
-    private String place_tel;
-    private Date place_closedate;
+    private Long id;
+    private String placeName;
+    private String placeAddr;
+    private String placeTel;
+    private String placeClosedate;
     private int count;
 
     public BannerDTO(Banner banner) {
-        this.place_name = banner.getPlace_name();
-        this.place_addr = banner.getPlace_addr();
-        this.place_tel = banner.getPlace_tel();
-        this.place_closedate = banner.getPlace_closedate();
+        this.placeName = banner.getPlaceName();
+        this.placeAddr = banner.getPlaceAddr();
+        this.placeTel = banner.getPlaceTel();
+        this.placeClosedate = banner.getPlaceClosedate().toString();
     }
 
-    public int getId() {
+    public BannerDTO(String placeName, String placeAddr, String placeTel, String placeClosedate) {
+        this.placeName = placeName;
+        this.placeAddr = placeAddr;
+        this.placeTel = placeTel;
+        this.placeClosedate = placeClosedate;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getPlace_name() {
-        return place_name;
+    public String getPlaceName() {
+        return placeName;
     }
 
-    public void setPlace_name(String place_name) {
-        this.place_name = place_name;
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
     }
 
-    public String getPlace_addr() {
-        return place_addr;
+    public String getPlaceAddr() {
+        return placeAddr;
     }
 
-    public void setPlace_addr(String place_addr) {
-        this.place_addr = place_addr;
+    public void setPlaceAddr(String placeAddr) {
+        this.placeAddr = placeAddr;
     }
 
-    public String getPlace_tel() {
-        return place_tel;
+    public String getPlaceTel() {
+        return placeTel;
     }
 
-    public void setPlace_tel(String place_tel) {
-        this.place_tel = place_tel;
+    public void setPlaceTel(String placeTel) {
+        this.placeTel = placeTel;
     }
 
-    public Date getPlace_closedate() {
-        return place_closedate;
+    public String getPlaceClosedate() {
+        return placeClosedate;
     }
 
-    public void setPlace_closedate(Date place_closedate) {
-        this.place_closedate = place_closedate;
+    public void setPlaceClosedate(String placeClosedate) {
+        this.placeClosedate = placeClosedate;
     }
 
     public int getCount() {
@@ -66,13 +71,7 @@ public class BannerDTO {
     public void setCount(int count) {
         this.count = count;
     }
-
-
-    @Override
-    public String toString() {
-        return "BannerDTO [count=" + count + ", id=" + id + ", place_addr=" + place_addr + ", place_closedate="
-                + place_closedate + ", place_name=" + place_name + ", place_tel=" + place_tel + "]";
-    }
+   
 }
 
 
